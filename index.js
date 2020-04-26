@@ -56,7 +56,6 @@ inquirer
         }
     ])
     .then(answers => {
-        console.log(answers.repoName)
         infoBuilder(answers);
     })
     .catch(error => {
@@ -77,18 +76,23 @@ async function infoBuilder(answers) {
             info[6] = "https://img.shields.io/badge/coolness-very_cool-brightgreen"
         }
         let github = await githubAPI(answers)
-        await info.push(github.data.owner.login, github.data.description, github.data.owner.avatar_url)
-        console.log(info)
+        await info.push(github.data.owner.login, github.data.description, github.data.owner.avatar_url, github.data.owner.private)
+        if (info[11] = "true") {
+            info[11] = "https://img.shields.io/badge/private-yes-red"
+        } else if (info[11] = "false") {
+            info[11] = "https://img.shields.io/badge/private-no-brightgreen"
+        }
     }
     finally {
         let readme = await generateReadme(info);
-        await writeToFile("README.md", readme);
+        console.log("Ok, " + info[8] + " take a look at the newREADME.md file I made for you and make any edits you feel like! (I won't take it personally.)")
+        await writeToFile("newREADME.md", readme);
     }
 }
 
 async function generateReadme(info) {
     return `# ${info[1]}
-![cool badge](${info[6]}) 
+![cool badge](${info[6]}) ![private badge](${info[11]})
 --------------------------------------------------
 ### Table of Contents
 * Description
@@ -111,8 +115,9 @@ ${info[3]}
 ${info[5]}
 
 ### Contributors
-This application was made by GitHub user ${info[8]}. 
 ![avatar](${info[10]})
+This application was made by GitHub user ${info[8]}. 
+
 ${info[4]}
 
 ### Future devlopment

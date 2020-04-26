@@ -1,5 +1,5 @@
-# dooskbot
-![cool badge](https://img.shields.io/badge/coolness-pretty_cool-orange) 
+# I READ YOU TO README 
+![cool badge](https://img.shields.io/badge/coolness-very_cool-bright)
 --------------------------------------------------
 ### Table of Contents
 * Description
@@ -10,24 +10,27 @@
 * Questions
 --------------------------------------------------
 ### Description
-Twitter bot that is essentially a crowd-sourced game of Mad Libs
+I Read You To README reads you to generate a robust README for your project. The application asks a few questions and takes that info to give you a nice looking READEME.md.
 
 ### Installation
-do it
+Clone repository onto local computer and run 'node index.js' to begin
 
 ### Usage
-by using it
+Answer the question prompts accurately and the application will process it into a README file in the directory it was run from.
 
 ### License
-MIT
+This application is open-source.
 
 ### Contributors
-This application was made by GitHub user dooski. 
 ![avatar](https://avatars0.githubusercontent.com/u/60619919?v=4)
-There are no additional contributors
+
+This application was made by GitHub user dooski. 
 
 ### Future devlopment
-more stuff
+More detailed questions format with optional sections to be included.
 
 ### Questions
 Please contact GitHub user dooski with questions.
+
+### GitHub link
+https://github.com/dooski/i-read-you-to-readme
